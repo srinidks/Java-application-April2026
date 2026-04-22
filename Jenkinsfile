@@ -23,7 +23,7 @@ pipeline {
 
         stage(' Build Docker image from Dockerfile') {
             steps {
-                sh 'docker build -t java-app .'
+                sh 'docker build -t srinidks/java-app .'
             }
         }
 
