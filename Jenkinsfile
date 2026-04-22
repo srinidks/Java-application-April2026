@@ -7,11 +7,7 @@ pipeline {
 
     stages {
 
-        stage('Check out code source code from GITHUB') {
-            steps {
-                git branch: 'main', url: 'https://github.com/srinidks/Java-application-April2026.git'
-            }
-        }
+
 
         stage('Build the artifact') {
             steps {
