@@ -9,7 +9,7 @@ pipeline {
 
         stage('Check out code source code from GITHUB') {
             steps {
-                git 'https://github.com/<your-username>/Java-app-April2026.git'
+                git 'https://github.com/srinidks/Java-application-April2026.git'
             }
         }
 
