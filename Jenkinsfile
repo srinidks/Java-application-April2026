@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy  The docker Container') {
             steps {
                 sh 'docker rm -f java-app'
-                sh 'docker run -d -p 8081:8080 java-app || true'
+                sh 'docker run -d -p 8081:8080 srinidks/java-app:latest || true'
             }
         }
     }
