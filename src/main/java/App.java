@@ -1,8 +1,19 @@
-public class App {
-    public static final String GREEN = "\u001B[32m";
-    public static final String RESET = "\u001B[0m";
+import com.sun.net.httpserver.HttpServer;
+import java.net.InetSocketAddress;
 
-    public static void main(String[] args) {
-        System.out.println(GREEN + "Hello from Jenkins CI/CD!" + RESET);
+public class App {
+    public static void main(String[] args) throws Exception {
+
+        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+
+        server.createContext("/", exchange -> {
+            String response = "<h1>Hello from Jenkins CI/CD 🚀</h1>";
+            exchange.sendResponseHeaders(200, response.length());
+            exchange.getResponseBody().write(response.getBytes());
+            exchange.close();
+        });
+
+        server.start();
+        System.out.println("Server started on port 8080");
     }
 }
